@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-image: url(bg.jpg); background-size: 100% 100%;">
+	<audio autoplay> 
+  <source src="Music.mp3"> 
+</audio>
+	<div class="d-flex">
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<h1 class="text-light bg-dark text-center mx-auto border border-light" style="width: 400px; height: 50px;">Набери 150 очков</h1>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+		<div style="background-image: url(нектар.png); background-size: 100% 100%; width: 80px; height: 80px;"></div>
+	</div>
+ 	<div class="d-flex">
+ 		<h1 class="text-light bg-dark text-center mx-auto border border-light" style="width: 400px; height: 50px;">Твои очки:<span class="schet">0</span></h1>
+ 	</div>	
+ 	<div class="bg-success text-center py-auto font-weight-bold win border border-dark" style="width: 200px; height: 100px; position: absolute; margin-left: 835px; display: none;"><h1><a class="text-dark" href="../index.html">Победа</a></h1></div>
+ 	<div class="bg-danger text-center py-auto font-weight-bold lose border border-dark" style="width: 250px; height: 100px; position: absolute; margin-left: 835px; display: none;"><h1><a class="text-dark" href="../index.html">Проигрыш</a></h1></div>
+<script>
+	let score = 0
+	let p = 0
+	let win = document.querySelector(".win")
+	let lose = document.querySelector(".lose")
+	let interv1= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'муравей.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '2s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,2000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			score = score + 1
+			document.querySelector(".schet").innerHTML = score
+			newImg.style.display = 'none'
+		}
+	}
+	let setI1 = setInterval(interv1,200)
+
+	let interv2= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'spider.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '2s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,2000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			score = score + 10
+			document.querySelector(".schet").innerHTML = score
+			newImg.style.display = 'none'
+		}
+	}
+	let setI2 = setInterval(interv2,5000)
+
+	let interv3= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'bee.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '2s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,2000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			let rand = Math.random()*1
+			let round = Math.round(rand)
+			score = score - 5
+			document.querySelector(".schet").innerHTML = score
+			newImg.style.display = 'none'
+		}
+	}
+	let setI3 = setInterval(interv3,1000)
+
+	let interv4= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'божья коровка.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '2s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,2000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			if(round == 1){
+				score = score + 5
+			}else{
+				score = score - 5
+			}
+			document.querySelector(".schet").innerHTML = score
+			newImg.style.display = 'none'
+		}
+	}
+	let setI4 = setInterval(interv4,1000)
+
+	let interv5= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'жук олень.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '2s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,2000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			if(p == 0){
+				p = p + 5
+			}else{
+				score = score + 5
+				newImg.style.display = 'none'
+				p = 0
+			}
+			document.querySelector(".schet").innerHTML = score
+		}
+	}
+	let setI5 = setInterval(interv5,200)
+
+	let interv6= function(){
+		let rand = Math.random()*1740
+		let round = Math.round(rand)+"px"
+		let rand1 = Math.random()+850
+		let round1 = Math.round(rand1)+"px"
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+		newImg.src = 'стрекоза.png'
+		newImg.style.height = '100px'
+		newImg.style.width = '100px'
+		newImg.style.left = round
+		newImg.style.top = round1
+		let transition = function(){
+			newImg.style.transition = '1s'
+			newImg.style.top = '180px'
+			let x = function(){
+				newImg.style.display = 'none'
+			}
+			setTimeout(x,1000)
+		}
+		setTimeout(transition,200)
+		newImg.style.position = 'absolute'
+		newImg.onclick = function(){
+			score = score + 5
+			document.querySelector(".schet").innerHTML = score
+			newImg.style.display = 'none'
+		}
+	}
+	let setI6 = setInterval(interv6,200)
+
+	let time = function(){
+		if (score >= 150) {
+			clearInterval(setI1)
+			clearInterval(setI2)
+			clearInterval(setI3)
+			clearInterval(setI4)
+			clearInterval(setI5)
+			clearInterval(setI6)
+			win.style.display = 'block'
+			win.style.marginTop = '250px'
+		}else{
+			clearInterval(setI1)
+			clearInterval(setI2)
+			clearInterval(setI3)
+			clearInterval(setI4)
+			clearInterval(setI5)
+			clearInterval(setI6)
+			lose.style.display = 'block'
+			lose.style.marginTop = '250px'
+		}
+	}
+	setTimeout(time,45000)
+
+	
+</script>
+
+</body>
+</html>
